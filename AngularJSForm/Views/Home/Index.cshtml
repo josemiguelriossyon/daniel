@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Create Customer</h2>
+<h2>Crear Cliente</h2>
 
 <div id="content" ng-controller="CustomerController">
     <span ng-show="isViewLoading" class="viewLoading">
@@ -13,21 +13,29 @@
     <hr />
     <form ng-submit="submitForm()" name="frmCustomer">
         <div>
-            <label for="email">Customer Name</label>
-            <input type="text" ng-model="cust.CustName" name="cname" placeholder="Enter your name" required ng-minlength="4" ng-maxlength="14" />
-            <span class="error" ng-show="(frmCustomer.$dirty||submitted) && frmCustomer.cname.$error.required">Customer name is Required</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.minlength">Minimum length required is 5</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.maxlength">Minimum length required is 15</span>
+            <label for="email">Nombre del cliente</label>
+            <input type="text" ng-model="cust.CustName" name="cname" placeholder="Introduzca su nombre" required ng-minlength="4" ng-maxlength="15" />
+            <span class="error" ng-show="(frmCustomer.$dirty||submitted) && frmCustomer.cname.$error.required">se requiere nombre de usuario!</span>
+            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.minlength">La cantidad minima de caracteres es 4</span>
+            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.maxlength">La longitud maxima es de 15 caracteres!</span>
         </div>
         <div>
-            <label for="email">E-mail address</label>
-            <input type="email" ng-model="cust.CustEmail" name="email" placeholder="Enter your Email" required />
-            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.email.$error.required">EmailId is Required!</span>
-            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.$error.email">Invalid EmailId!</span>
+            <label for="email">E-mail</label>
+            <input type="email" ng-model="cust.CustEmail" name="email" placeholder="Introduzca su Email" required />
+            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.email.$error.required">Se requiere un email!</span>
+            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.$error.email">Ese email no es correcto!</span>
+        </div>
+        <div>
+            <label for="email">Dirección del cliente</label>
+            <input type="text" ng-model="cust.CustDir" name="dir" placeholder="Introduzca su direccion" required ng-minlength="4" required />
+            <span class="error" ng-show="(frmCustomer.$dirty||submitted) && frmCustomer.dir.$error.required">se requiere la direccion!</span>
+            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.dir.$error.minlength">La cantidad minima de caracteres es 4</span>
+            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.dir.$error.maxlength">Minimum length required is 15</span>
         </div>
         <div>
             <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
         </div>
+
     </form>
 </div>
 
