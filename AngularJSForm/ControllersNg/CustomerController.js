@@ -4,7 +4,16 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     $scope.message = '';
     $scope.result = "color-default";
     $scope.isViewLoading = false;
-
+    /*
+    $scope.cars = {
+        car01: { brand: "Ford", model: "Mustang", color: "red" },
+        car02: { brand: "Fiat", model: "500", color: "white" },
+        car03: { brand: "Volvo", model: "XC90", color: "black" }
+    }
+    */
+    $scope.cars = [
+       "fiat","ford","volvo"
+    ];
     //get called when user submits the form
     $scope.submitForm = function () {
         $scope.isViewLoading = true;
@@ -32,6 +41,7 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
             $scope.message = 'Unexpected Error while saving data!!';
         });
         $scope.isViewLoading = false;
+       
     }
 })
 .config(function ($locationProvider) {
@@ -39,3 +49,6 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     //default = 'false'
     $locationProvider.html5Mode(true);
 });
+
+//pruebas de controlador
+

@@ -15,24 +15,48 @@
         <div>
             <label for="email">Nombre del cliente</label>
             <input type="text" ng-model="cust.CustName" name="cname" placeholder="Introduzca su nombre" required ng-minlength="4" ng-maxlength="15" />
-            <span class="error" ng-show="(frmCustomer.$dirty||submitted) && frmCustomer.cname.$error.required">se requiere nombre de usuario!</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.minlength">La cantidad minima de caracteres es 4</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.cname.$error.maxlength">La longitud maxima es de 15 caracteres!</span>
+            <span class="error" ng-show="(frmCustomer.cname.$dirty||submitted) && frmCustomer.cname.$error.required">se requiere nombre de usuario!</span>
+            <span class="error" ng-show="frmCustomer.cname.$dirty && frmCustomer.cname.$error.minlength">La cantidad minima de caracteres es 4</span>
+            <span class="error" ng-show="frmCustomer.cname.$dirty && frmCustomer.cname.$error.maxlength">La longitud maxima es de 15 caracteres!</span>
         </div>
         <div>
             <label for="email">E-mail</label>
             <input type="email" ng-model="cust.CustEmail" name="email" placeholder="Introduzca su Email" required />
-            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.email.$error.required">Se requiere un email!</span>
-            <span class="error" ng-show="(frmCustomer.$dirty ||submitted) && frmCustomer.$error.email">Ese email no es correcto!</span>
+            <span class="error" ng-show="(frmCustomer.email.$dirty||submitted) && frmCustomer.email.$error.required">Se requiere un email!</span>
+            <span class="error" ng-show="(frmCustomer.email.$dirty ||submitted) && frmCustomer.$error.email">Ese email no es correcto!</span>
+            <h1>El email es: {{frmCustomer.email.$valid}}</h1>
         </div>
         <div>
             <label for="email">Dirección del cliente</label>
             <input type="text" ng-model="cust.CustDir" name="dir" placeholder="Introduzca su direccion" required ng-minlength="4" required />
-            <span class="error" ng-show="(frmCustomer.$dirty||submitted) && frmCustomer.dir.$error.required">se requiere la direccion!</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.dir.$error.minlength">La cantidad minima de caracteres es 4</span>
-            <span class="error" ng-show="frmCustomer.$dirty && frmCustomer.dir.$error.maxlength">Minimum length required is 15</span>
+            <span class="error" ng-show="(frmCustomer.dir.$dirty||submitted) && frmCustomer.dir.$error.required">se requiere la direccion!</span>
+            <span class="error" ng-show="frmCustomer.dir.$dirty && frmCustomer.dir.$error.minlength">La cantidad minima de caracteres es 4</span>
+            <span class="error" ng-show="frmCustomer.dir.$dirty && frmCustomer.dir.$error.maxlength">Minimum length required is 15</span>
+    
         </div>
+        <div ng-app="">
+            <form>
+                Haz clicl para enseñar un texto:
+                <input type="checkbox" ng-model="myVar">
+            </form>
+            <h1 ng-show="myVar">Mi Ejemplo</h1>
+        </div>
+
         <div>
+
+           
+
+                <p>Select a car:</p>
+
+                <select ng-model="cars.selectedCar" ng-options="x  in cars">
+                </select>
+
+                <h1>has seleccionado: {{cars.selectedCar.brand}}</h1>
+                <h2>Modelo: {{cars.selectedCar.model}}</h2>
+                <h3>Color: {{cars.selectedCar.color}}</h3>
+
+                <p>Note that the selected value represents an object.</p>
+           
             <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
         </div>
 
@@ -47,6 +71,7 @@
 }
 
 <style>
+
     #content label {
         width: 150px;
     }
