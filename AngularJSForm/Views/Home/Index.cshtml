@@ -3,6 +3,8 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <h2>Crear Cliente</h2>
 
 <div id="content" ng-controller="CustomerController">
@@ -32,7 +34,7 @@
             <span class="error" ng-show="(frmCustomer.dir.$dirty||submitted) && frmCustomer.dir.$error.required">se requiere la direccion!</span>
             <span class="error" ng-show="frmCustomer.dir.$dirty && frmCustomer.dir.$error.minlength">La cantidad minima de caracteres es 4</span>
             <span class="error" ng-show="frmCustomer.dir.$dirty && frmCustomer.dir.$error.maxlength">Minimum length required is 15</span>
-    
+
         </div>
         <div ng-app="">
             <form>
@@ -44,19 +46,39 @@
 
         <div>
 
-           
 
-                <p>Select a car:</p>
 
-                <select ng-model="cars.selectedCar" ng-options="x  in cars">
-                </select>
+            <p>Select a car:</p>
 
-                <h1>has seleccionado: {{cars.selectedCar.brand}}</h1>
-                <h2>Modelo: {{cars.selectedCar.model}}</h2>
-                <h3>Color: {{cars.selectedCar.color}}</h3>
+            <select ng-model="cars.coches" ng-options="o as o for o in cars">
+            </select>
 
-                <p>Note that the selected value represents an object.</p>
-           
+            <h1>has seleccionado: {{cars.selectedCar.brand}}</h1>
+            <h2>Modelo: {{cars.selectedCar.model}}</h2>
+            <h3>Color: {{cars.selectedCar.color}}</h3>
+
+            <p>Note that the selected value represents an object.</p>
+
+            <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+                <header class="w3-container w3-light-grey w3-padding-16">
+                    <h3>lista de la compra</h3>
+                </header>
+                <ul class="w3-ul">
+                    <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
+                </ul>
+                <div class="w3-container w3-light-grey w3-padding-16">
+                    <div class="w3-row w3-margin-top">
+                        <div class="w3-col s10">
+                            <input placeholder="añade elementos aqui" ng-model="addMe" class="w3-input w3-border w3-padding">
+                        </div>
+                        <div class="w3-col s2">
+                            <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Añadir</button>
+                        </div>
+                    </div>
+                    <p class="w3-text-red">{{errortext}}</p>
+                </div>
+            </div>
+
             <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
         </div>
 
@@ -68,6 +90,7 @@
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/ControllersNg/CustomerController.js"></script>
+    <script src="~/ControllersNg/myCtrl.js"></script>
 }
 
 <style>

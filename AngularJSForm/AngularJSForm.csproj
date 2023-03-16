@@ -115,6 +115,7 @@
     <Content Include="Content\images\ng-loader.gif" />
     <Content Include="Content\Site.css" />
     <Content Include="ControllersNg\CustomerController.js" />
+    <Content Include="ControllersNg\myCtrl.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Models\myModel.Context.tt">
