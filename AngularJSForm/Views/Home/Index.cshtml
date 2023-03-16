@@ -44,46 +44,50 @@
             <h1 ng-show="myVar">Mi Ejemplo</h1>
         </div>
 
-        <div>
+        <div ng-app="myApp" ng-controller="CustomerController">
 
 
 
             <p>Select a car:</p>
 
-            <select ng-model="cars.coches" ng-options="o as o for o in cars">
+            <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
             </select>
 
-            <h1>has seleccionado: {{cars.selectedCar.brand}}</h1>
-            <h2>Modelo: {{cars.selectedCar.model}}</h2>
-            <h3>Color: {{cars.selectedCar.color}}</h3>
+            <h1>has seleccionado: {{selectedCar.brand}}</h1>
+            <h2>Modelo: {{selectedCar.model}}</h2>
+            <h3>Color: {{selectedCar.color}}</h3>
 
             <p>Note that the selected value represents an object.</p>
 
-            <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
-                <header class="w3-container w3-light-grey w3-padding-16">
-                    <h3>lista de la compra</h3>
-                </header>
-                <ul class="w3-ul">
-                    <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
-                </ul>
-                <div class="w3-container w3-light-grey w3-padding-16">
-                    <div class="w3-row w3-margin-top">
-                        <div class="w3-col s10">
-                            <input placeholder="añade elementos aqui" ng-model="addMe" class="w3-input w3-border w3-padding">
-                        </div>
-                        <div class="w3-col s2">
-                            <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Añadir</button>
-                        </div>
-                    </div>
-                    <p class="w3-text-red">{{errortext}}</p>
-                </div>
-            </div>
+
 
             <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
         </div>
 
     </form>
 </div>
+
+<div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
+    <header class="w3-container w3-light-grey w3-padding-16">
+        <h3>My Shopping List</h3>
+    </header>
+    <ul class="w3-ul">
+        <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
+    </ul>
+    <div class="w3-container w3-light-grey w3-padding-16">
+        <div class="w3-row w3-margin-top">
+            <div class="w3-col s10">
+                <input placeholder="Add shopping items here" ng-model="addMe" class="w3-input w3-border w3-padding">
+            </div>
+            <div class="w3-col s2">
+                <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
+            </div>
+        </div>
+        <p class="w3-text-red">{{errortext}}</p>
+    </div>
+</div>
+
+
 
 @section JavaScript{
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>

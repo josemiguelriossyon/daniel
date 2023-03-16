@@ -4,16 +4,17 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     $scope.message = '';
     $scope.result = "color-default";
     $scope.isViewLoading = false;
-    /*
-    $scope.cars = {
-        car01: { brand: "Ford", model: "Mustang", color: "red" },
-        car02: { brand: "Fiat", model: "500", color: "white" },
-        car03: { brand: "Volvo", model: "XC90", color: "black" }
-    }
-    */
-    $scope.cars = [
-       "fiat","ford","volvo"
-    ];
+
+  
+   
+        $scope.cars = {
+            car01: { brand: "Ford", model: "Mustang", color: "red" },
+            car02: { brand: "Fiat", model: "500", color: "white" },
+            car03: { brand: "Volvo", model: "XC90", color: "black" }
+        }
+ 
+    
+   
     //get called when user submits the form
     $scope.submitForm = function () {
         $scope.isViewLoading = true;
