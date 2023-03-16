@@ -67,11 +67,11 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     //default = 'false'
     $locationProvider.html5Mode(true);
 })
-.controller('myService', function ($scope, $timeout) {
-    $scope.myHeader = "mi primer servicio!";
-    $timeout(function () {
-        $scope.myHeader = "funciona correctamente!";
-    }, 2000);
+.controller('myService', function ($scope, $interval) {
+    $scope.theTime = new Date().toLocaleTimeString();
+    $interval(function () {
+        $scope.theTime = new Date().toLocaleTimeString();
+    }, 1000);
 });
 
 
