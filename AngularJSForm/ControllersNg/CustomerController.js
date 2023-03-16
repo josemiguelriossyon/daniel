@@ -11,7 +11,8 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
             car01: { brand: "Ford", model: "Mustang", color: "red" },
             car02: { brand: "Fiat", model: "500", color: "white" },
             car03: { brand: "Volvo", model: "XC90", color: "black" }
-        }
+    }
+   
  
     
    
@@ -45,11 +46,28 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
        
     }
 })
+    .controller('myCrtl', function ($scope) {
+        $scope.products = ["Leche", "Pan", "Queso"];
+        $scope.addItem = function () {
+            $scope.errortext = "";
+            if (!$scope.addMe) { return; }
+            if ($scope.products.indexOf($scope.addMe) == -1) {
+                $scope.products.push($scope.addMe);
+            } else {
+                $scope.errortext = "The item is already in your shopping list.";
+            }
+        }
+        $scope.removeItem = function (x) {
+            $scope.errortext = "";
+            $scope.products.splice(x, 1);
+        }
+    })
 .config(function ($locationProvider) {
 
     //default = 'false'
     $locationProvider.html5Mode(true);
 });
+
 
 //pruebas de controlador
 
