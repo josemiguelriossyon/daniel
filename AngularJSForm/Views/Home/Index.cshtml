@@ -36,55 +36,62 @@
             <span class="error" ng-show="frmCustomer.dir.$dirty && frmCustomer.dir.$error.maxlength">Minimum length required is 15</span>
 
         </div>
-        <div ng-app="">
-            <form>
-                Haz clicl para enseñar un texto:
-                <input type="checkbox" ng-model="myVar">
-            </form>
-            <h1 ng-show="myVar">Mi Ejemplo</h1>
-        </div>
 
-        <div ng-app="myApp" ng-controller="CustomerController">
+        <form>
+            Haz clicl para enseñar un texto:
+            <input type="checkbox" ng-model="myVar">
+        </form>
+        <h1 ng-show="myVar">Mi Ejemplo</h1>
 
 
 
-            <p>Select a car:</p>
 
-            <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
-            </select>
 
-            <h1>has seleccionado: {{selectedCar.brand}}</h1>
-            <h2>Modelo: {{selectedCar.model}}</h2>
-            <h3>Color: {{selectedCar.color}}</h3>
 
-            <p>Note that the selected value represents an object.</p>
+        <p>Select a car:</p>
 
-            <div ng-controller="myCrtl" class="w3-card-2 w3-margin" style="max-width:400px;">
-                <header class="w3-container w3-light-grey w3-padding-16">
-                    <h3>My Shopping List</h3>
-                </header>
-                <ul class="w3-ul">
-                    <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
-                </ul>
-                <div class="w3-container w3-light-grey w3-padding-16">
-                    <div class="w3-row w3-margin-top">
-                        <div class="w3-col s10">
-                            <input placeholder="Add shopping items here" ng-model="addMe" class="w3-input w3-border w3-padding">
-                        </div>
-                        <div class="w3-col s2">
-                            <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
-                        </div>
-                    </div>
-                    <p class="w3-text-red">{{errortext}}</p>
-                </div>
+        <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+        </select>
+
+        <h1>has seleccionado: {{selectedCar.brand}}</h1>
+        <h2>Modelo: {{selectedCar.model}}</h2>
+        <h3>Color: {{selectedCar.color}}</h3>
+</div>
+
+<p>Note that the selected value represents an object.</p>
+
+<div ng-controller="myCrtl" class="w3-card-2 w3-margin" style="max-width:400px;">
+    <header class="w3-container w3-light-grey w3-padding-16">
+        <h3>My Shopping List</h3>
+    </header>
+    <ul class="w3-ul">
+        <li ng-repeat="x in products" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right">×</span></li>
+    </ul>
+    <div class="w3-container w3-light-grey w3-padding-16">
+        <div class="w3-row w3-margin-top">
+            <div class="w3-col s10">
+                <input placeholder="Add shopping items here" ng-model="addMe" class="w3-input w3-border w3-padding">
             </div>
-
-
-            <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+            <div class="w3-col s2">
+                <button ng-click="addItem()" class="w3-btn w3-padding w3-green">Add</button>
+            </div>
         </div>
+        <p class="w3-text-red">{{errortext}}</p>
+    </div>
+</div>
+<div ng-controller="myService">
+    <p>This header will change after two seconds:</p>
+
+    <h1>{{myHeader}}</h1>
+
+</div>
+
+
+
+<input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+
 
     </form>
-</div>
 
 
 
@@ -94,7 +101,8 @@
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/ControllersNg/CustomerController.js"></script>
-    <script src="~/ControllersNg/myCtrl.js"></script>
+    <script src="~/app/app.js"></script>
+
 }
 
 <style>
