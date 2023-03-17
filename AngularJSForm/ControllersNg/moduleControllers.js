@@ -82,11 +82,29 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     .controller('driversController', function ($scope, f1Service) {
         $scope.nameFilter = null;
         $scope.driversList = [];
+        $scope.searchFilter = function (driver) {
+            var re = new RegExp($scope.nameFilter, 'i');
+            return !$scope.nameFilter || re.test(driver.Driver.givenName) || re.test(driver.Driver.familyName);
+        };
 
         f1Service.getDrivers().success(function (response) {
-            //Dig into the responde to get the relevant data
             $scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
         });
+    }).
+
+    /* Driver controller */
+    controller('driverController', function ($scope, $routeParams, f1Service) {
+        $scope.id = $routeParams.id;
+        $scope.races = [];
+        $scope.driver = null;
+
+        f1Service.getDriverDetails($scope.id).success(function (response) {
+            $scope.driver = response.MRData.StandingsTable.StandingsLists[0].DriverStandings[0];
+        });
+
+        f1Service.getDriverRaces($scope.id).success(function (response) {
+            $scope.races = response.MRData.RaceTable.Races;
+        }); 
     });
 
 
