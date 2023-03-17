@@ -73,9 +73,9 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
         $scope.theTime = new Date().toLocaleTimeString();
     }, 1000);
 })
-.controller('divController',['$scope', function ($scope, CalculatorService) {
+    .controller('divController', ['$scope','calculatorService', function ($scope, calculatorService) {
     $scope.divide = function () {
-        $scope.result = CalculatorService.divide($scope.numero1, $scope.numero2);
+        $scope.result = calculatorService.divide($scope.numero1, $scope.numero2);
        
     };
 }

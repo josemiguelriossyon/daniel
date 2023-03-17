@@ -1,4 +1,4 @@
-﻿angular.module('moduleService',[]).factory('CalculatorService', function () {
+﻿angular.module('moduleService', []).factory('calculatorService', function () {
     var service = {};
 
     service.divide = function (a, b) {
