@@ -73,10 +73,13 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
         $scope.theTime = new Date().toLocaleTimeString();
     }, 1000);
 })
-.controller('divController',["$scope", function ($scope, CalculatorService) {
+.controller('divController',['$scope', function ($scope, CalculatorService) {
     $scope.divide = function () {
         $scope.result = CalculatorService.divide($scope.numero1, $scope.numero2);
+       
     };
-}]);
+}
+]
+);
 
 
