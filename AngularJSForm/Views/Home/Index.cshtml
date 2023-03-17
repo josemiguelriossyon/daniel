@@ -87,7 +87,7 @@
 
 </div>
 <div ng-controller="divController">
-     <label>Numero 1:</label>
+    <label>Numero 1:</label>
     <input type="number" ng-model="numero1">
     <br>
     <label>Numero 2:</label>
@@ -99,57 +99,58 @@
 </div>
 
 
-    <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+<input type="submit" value="Submit" ng-disabled="myForm.$invalid">
 
-    
+
     </form>
 
 
 
 
-    @section JavaScript{
-        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script src="~/Scripts/angular.min.js"></script>
-        <script src="~/Scripts/angular-route.min.js"></script>
-        <script src="~/ControllersNg/moduleControllers.js"></script>
-        <script src="~/app/app.js"></script>
+@section JavaScript{
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/ControllersNg/moduleControllers.js"></script>
+    <script src="~/app/app.js"></script>
+    <script src="~/Service/moduleService.js"></script>
 
+}
+
+<style>
+
+    #content label {
+        width: 150px;
     }
 
-    <style>
+    #content input[type=submit] {
+        margin-left: 154px;
+        width: 120px;
+        padding: 5px 15px;
+        background: #ff6a00;
+        border: 0 none;
+        cursor: pointer;
+        color: #fff;
+    }
 
-        #content label {
-            width: 150px;
-        }
+    .error {
+        color: red;
+    }
 
-        #content input[type=submit] {
-            margin-left: 154px;
-            width: 120px;
-            padding: 5px 15px;
-            background: #ff6a00;
-            border: 0 none;
-            cursor: pointer;
-            color: #fff;
-        }
+    .color-default {
+        color: #000;
+    }
 
-        .error {
-            color: red;
-        }
+    .color-red {
+        color: red;
+    }
 
-        .color-default {
-            color: #000;
-        }
+    .color-green {
+        color: green;
+    }
 
-        .color-red {
-            color: red;
-        }
-
-        .color-green {
-            color: green;
-        }
-
-        #content input.ng-dirty.ng-invalid {
-            border: 1px solid red;
-            background-color: rgb(255, 244, 244);
-        }
-    </style>
+    #content input.ng-dirty.ng-invalid {
+        border: 1px solid red;
+        background-color: rgb(255, 244, 244);
+    }
+</style>
