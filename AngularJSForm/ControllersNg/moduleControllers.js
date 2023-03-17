@@ -78,8 +78,15 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
         $scope.result = calculatorService.divide($scope.numero1, $scope.numero2);
        
     };
-}
-]
-);
+    }])
+    .controller('driversController', function ($scope, f1Service) {
+        $scope.nameFilter = null;
+        $scope.driversList = [];
+
+        f1Service.getDrivers().success(function (response) {
+            //Dig into the responde to get the relevant data
+            $scope.driversList = response.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+        });
+    });
 
 
