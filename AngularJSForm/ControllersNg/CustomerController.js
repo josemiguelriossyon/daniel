@@ -67,13 +67,16 @@ controller('CustomerController', function ($scope, $http, $location, $window) {
     //default = 'false'
     $locationProvider.html5Mode(true);
 })
-.controller('myService', function ($scope, $interval) {
+.controller('timeController', function ($scope, $interval) {
     $scope.theTime = new Date().toLocaleTimeString();
     $interval(function () {
         $scope.theTime = new Date().toLocaleTimeString();
     }, 1000);
+})
+.controller('divController', function ($scope, CalculatorService) {
+    $scope.divide = function () {
+        $scope.result = CalculatorService.divide($scope.numero1, $scope.numero2);
+    };
 });
 
-
-//pruebas de controlador
 
