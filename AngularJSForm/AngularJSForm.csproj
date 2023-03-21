@@ -195,6 +195,13 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\formulario.cshtml" />
+    <Content Include="Views\Home\ejemploTexto.cshtml" />
+    <Content Include="Views\Home\seleccionCoche.cshtml" />
+    <Content Include="Views\Home\carritoCompra.cshtml" />
+    <Content Include="Views\Home\reloj.cshtml" />
+    <Content Include="Views\Home\calculadora.cshtml" />
+    <Content Include="Views\Home\formula1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

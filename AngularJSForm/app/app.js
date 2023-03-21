@@ -8,5 +8,6 @@
 		$routeProvider.
 			when("/drivers", { templateUrl: "partials/drivers.html", controller: "driversController" }).
 			when("/drivers/:id", { templateUrl: "partials/driver.html", controller: "driverController" }).
+			when("/formulario", { templateUrl: "partials/drivers.html", controller: "driversController" }).
 			otherwise({ redirectTo: '/drivers' });
 	}]);

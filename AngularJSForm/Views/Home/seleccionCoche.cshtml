@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+<p>Select a car:</p>
+
+<select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+</select>
+
+<h1>has seleccionado: {{selectedCar.brand}}</h1>
+<h2>Modelo: {{selectedCar.model}}</h2>
+<h3>Color: {{selectedCar.color}}</h3>
+</div>

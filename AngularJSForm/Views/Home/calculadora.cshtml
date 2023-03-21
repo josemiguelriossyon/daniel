@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+
+
+<div ng-controller="divController">
+    <h1>Calculadora dividir</h1>
+    <label>Numero 1:</label>
+    <input type="number" ng-model="numero1">
+    <br>
+    <label>Numero 2:</label>
+    <input type="number" ng-model="numero2">
+    <br>
+    <button ng-click="divide()">Dividir</button>
+    <br>
+    <p>El resultado es: {{result}}</p>
+</div>
